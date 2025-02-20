@@ -1,5 +1,4 @@
 using FluentAssertions;
-using Tax.Simulator.Tests.Integration;
 using Xunit;
 
 namespace Tax.Simulator.Tests;
