@@ -68,4 +68,11 @@ public class SimulateurShould
 
         Simulateur.CalculerImpotsAnnuel(SituationFamiliale.CELIBATAIRE, 2172.5m, 0m, 0).Should().Be(1742.95m);
     }
+
+    [Fact(DisplayName = "Tranche d'impôts haut revenus")]
+    public void testTrancheImpotHautsRevenus()
+    {
+        Simulateur.CalculerImpotsAnnuel(SituationFamiliale.CELIBATAIRE, 45000m, 0m, 0).Should().Be(223_508.56m);
+        Simulateur.CalculerImpotsAnnuel(SituationFamiliale.MARIE_PACSE, 25000, 30000, 2).Should().Be(234_925.68m);
+    }
 }
