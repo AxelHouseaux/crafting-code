@@ -33,16 +33,7 @@ public static class Simulateur
 
     private static decimal CalculerQuotientEnfants(int nombreEnfants)
     {
-        decimal quotientEnfants;
-
-        if(nombreEnfants <= 2)
-        {
-            quotientEnfants = 0.5m * nombreEnfants;
-        }
-        else
-        {
-            quotientEnfants = 1.0m + (nombreEnfants - 2) * 0.5m;
-        }
+        decimal quotientEnfants = 1.0m + (nombreEnfants - 2) * 0.5m;
 
         return quotientEnfants;
     }
