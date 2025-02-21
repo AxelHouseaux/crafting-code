@@ -6,12 +6,13 @@ namespace Tax.Simulator.Tests;
 
 public class SimulateurShould
 {
+
     [Fact(DisplayName = "Calcul impôt célibataire")]
     public void testCalculImpotCelibataire()
     {
         Simulateur.CalculerImpotsAnnuel("Célibataire", 2000m, 0m, 0).Should().Be(1515.25m);
     }
-
+    
     [Fact(DisplayName = "Calcul impôt célibataire invalide")]
     public void testCalculImpotCelibataireInvalide()
     {
@@ -20,14 +21,16 @@ public class SimulateurShould
         
     }
 
+    
     [Fact(DisplayName = "Calcul impôt Marié/Pacsé")]
-    public void testCalculImpôtMariePacse()
+    public void testCalculImpotMariePacse()
     {
         Simulateur.CalculerImpotsAnnuel("Marié/Pacsé", 2500m, 2000m, 0).Should().Be(4043.90m);
     }
 
+    
     [Fact(DisplayName = "Calcul impôt Marié/Pacsé invalide")]
-    public void testCalculImpôtMariePacseInvalide()
+    public void testCalculImpotMariePacseInvalide()
     {
 
         FluentActions.Invoking(() => Simulateur.CalculerImpotsAnnuel("Marié/Pacsé", -2500m, 2000m, 0)).Should().Throw<ArgumentException>().WithMessage("Les salaires doivent être positifs.");
