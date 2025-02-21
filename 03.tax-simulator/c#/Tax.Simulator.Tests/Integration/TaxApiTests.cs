@@ -49,4 +49,5 @@ public class TaxApiTests(WebApplicationFactory<Program> factory) : IClassFixture
         decimal salaireMensuelConjoint,
         int nombreEnfants) =>
         $"/api/tax/calculate?situationFamiliale={situationFamiliale}&salaireMensuel={salaireMensuel}&salaireMensuelConjoint={salaireMensuelConjoint}&nombreEnfants={nombreEnfants}";
+    
 }
